@@ -1,0 +1,42 @@
+/* src/components/Header.css */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 10px;
+    background-color: #0b0b0bdc;
+    color: #fff;
+    font-family: 'Geosanslight', sans-serif;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Geosanslight', sans-serif;
+  }
+
+  #logo {
+    width: 120px;
+    height: 100px;
+  }
+
+  #logo:hover {
+    cursor: pointer;
+  }
+
+  .nav a {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .nav a:hover {
+    color: #35d6b6;
+  }  

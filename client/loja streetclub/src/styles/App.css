@@ -1,0 +1,13 @@
+/* src/styles/global.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #212121;
+  color: #b10fb6;
+  margin: 0;
+}
+
+h1 {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  font-size: 28px;
+}

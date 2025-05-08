@@ -1,0 +1,113 @@
+.carrinho-container {
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .carrinho-container h1 {
+    font-size: 28px;
+    margin-bottom: 1rem;
+  }
+  
+  .empty {
+    font-size: 18px;
+    margin-top: 2rem;
+  }
+  
+  .carrinho-lista {
+    list-style: none;
+    border: 1px solid purple;
+    border-radius: 15px;
+    padding: 0;
+    margin: 2rem auto;
+    max-width: 700px;
+  }
+  
+  .carrinho-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #2a2a2a;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    gap: 1rem;
+  }
+  
+  .carrinho-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  
+  .carrinho-item div {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .carrinho-item h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .carrinho-item p {
+    margin: 0.3rem 0;
+  }
+  
+  .carrinho-item button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  
+  .carrinho-item button:hover {
+    background-color: #cc3a3a;
+  }
+  
+  /* Botão de esvaziar carrinho */
+  .clear-cart-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .clear-cart-btn:hover {
+    background-color: #d43c3c;
+  }
+  
+  /* Total e finalização */
+  .total-container {
+    margin-top: 2rem;
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .total-value {
+    margin-bottom: 1rem;
+  }
+  
+  .finalize-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #35d6b6;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .finalize-btn:hover {
+    background-color: #27b89c;
+  }  
