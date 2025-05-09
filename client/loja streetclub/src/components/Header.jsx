@@ -5,10 +5,8 @@ import './Header.css';
 export default function Header() {
   return (
     <header className="top-header">
-            <img src={logoIMG} alt="Logo StreetClub Store" id='logo' />
-      <h1>StreetClub Store</h1>
+            <Link to="/"><img src={logoIMG} alt="Logo StreetClub Store" id='logo' /></Link>
       <nav className="nav">
-        <Link to="/">Home</Link>
         <Link to="/loja">Loja</Link>
         <Link to="/carrinho">Carrinho</Link>
         <Link to="/login">Login</Link>

@@ -3,7 +3,9 @@ body {
   font-family: Arial, sans-serif;
   background-color: #212121;
   color: #b10fb6;
-  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+  width: 99vw;
 }
 
 h1 {

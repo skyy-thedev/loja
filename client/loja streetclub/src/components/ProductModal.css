@@ -1,0 +1,117 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #0e0e0ee6;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 60vw;
+  display: flex;
+  gap: 2rem;
+  color: white;
+  position: relative;
+  flex-wrap: wrap;
+  animation: fadeIn 0.3s ease-out;
+  font-family: 'Geosanslight', sans-serif;
+  font-size: 20px;
+}
+
+.modal-image {
+  position: relative;
+  max-width: 35vw;
+  max-height: 35vw;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease-out; /* Transição para zoom suave */
+}
+
+/* Quando o mouse está sobre a imagem, aplica o zoom */
+.modal-image:hover img {
+  transform: scale(1.2); /* Aplica o zoom fixo da imagem */
+  transition: transform 0.1s ease-out; /* Sem transição de suavização para o efeito parallax */
+}
+
+/* Quando não estiver em hover, a imagem volta ao normal */
+.modal-image img {
+  transform: scale(1); /* Garante que a imagem tenha o tamanho normal fora do hover */
+}
+
+.modal-image:hover {
+  transform-origin: center;
+  cursor: zoom-in;
+}
+
+.modal-info {
+  flex: 1;
+}
+
+.modal-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #35d6b6;
+}
+
+.modal-old-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 16px;
+}
+
+.modal-button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #35d6b6;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modal-button:hover {
+  background-color: #b211a4;
+  color: white;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

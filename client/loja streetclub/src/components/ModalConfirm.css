@@ -1,0 +1,49 @@
+/* src/components/ModalConfirm.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .modal-box {
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px #35d6b6;
+  }
+  
+  .modal-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .confirm-btn, .cancel-btn {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .confirm-btn {
+    background-color: #35d6b6;
+    color: black;
+  }
+  
+  .cancel-btn {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  

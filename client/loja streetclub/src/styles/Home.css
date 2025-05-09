@@ -1,0 +1,12 @@
+.home-container h3 {
+    text-align: center;
+    justify-content: center;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+.home-content {
+    max-width: 100vw;
+}
