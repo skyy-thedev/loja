@@ -1,9 +1,10 @@
 // src/pages/Loja.jsx
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useStore from '../context/useStore';
 import productsData from '../data/products';
-import Notification from '../components/Notification';
+import CartSidebar from '../components/CartSidebar';
+import AddToCartConfirmationModal from '../components/AddToCartConfirmationModal';
 import Destaque from '../components/Destaque';
 import ProductFilter from '../components/ProductFilter';
 import ProductModal from '../components/ProductModal';
@@ -11,8 +12,11 @@ import '../styles/Loja.css';
 
 export default function Loja() {
   const addToCart = useStore(state => state.addToCart);
-  const [showNotification, setShowNotification] = useState(false);
+  const cartItems = useStore(state => state.cart);
+  const [showCartSidebar, setShowCartSidebar] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+
   const [filters, setFilters] = useState({
     search: '',
     color: '',
@@ -21,22 +25,18 @@ export default function Loja() {
     priceRange: '',
     saleOnly: false,
   });
+
   const navigate = useNavigate();
 
-  const handleFilterChange = useCallback((newFilters) => {
-    setFilters(prev => ({ ...prev, ...newFilters }));
-  }, []);
+  const handleFilterChange = (newFilters) => setFilters(newFilters);
 
-  const handleAddToCart = (product) => {
-    addToCart(product);
-    setShowNotification(true);
-
-    setTimeout(() => {
-      setShowNotification(false);
-      navigate('/carrinho');
-    }, 2000);
+  // Função para abrir o modal de confirmação após adicionar o produto ao carrinho
+  const handleAddToCartFromModal = (productWithOptions) => {
+    addToCart(productWithOptions);
+    setShowConfirmationModal(true);
   };
 
+  // Função para filtrar os produtos com base nos filtros aplicados
   const filteredProducts = productsData
     .filter(p => p.name.toLowerCase().includes(filters.search.toLowerCase()))
     .filter(p => (filters.color ? p.color === filters.color : true))
@@ -55,10 +55,28 @@ export default function Loja() {
 
   return (
     <div className="loja-container">
-      {showNotification && <Notification message="Produto adicionado ao carrinho!" />}
+      {showCartSidebar && (
+        <CartSidebar
+          cartItems={cartItems}
+          onClose={() => setShowCartSidebar(false)}
+          onGoToCart={() => navigate('/carrinho')}
+        />
+      )}
+
+      <AddToCartConfirmationModal
+        isOpen={showConfirmationModal}
+        onContinueShopping={() => {
+          setShowConfirmationModal(false);
+          setShowCartSidebar(true);
+        }}
+        onGoToCart={() => {
+          setShowConfirmationModal(false);
+          navigate('/carrinho');
+        }}
+      />
 
       <Destaque />
-      <h3>Confira nossos produtos:</h3>
+      <h3>Produtos em destaque:</h3>
 
       <div className="loja-content">
         <aside className="filtro-container">
@@ -75,8 +93,7 @@ export default function Loja() {
               <p>
                 {product.promo && product.oldPrice && (
                   <span style={{ textDecoration: 'line-through', color: '#888', fontSize: '20px' }}>
-                    R$ {product.oldPrice.toFixed(2)}
-                    <br/>
+                    R$ {product.oldPrice.toFixed(2)}<br />
                   </span>
                 )}
                 <span style={{ fontWeight: 'bold', fontSize: '30px' }}>
@@ -84,22 +101,20 @@ export default function Loja() {
                 </span>
               </p>
               <button onClick={(e) => {
-                e.stopPropagation(); // impede o clique de afetar o card
-                handleAddToCart(product);
+                e.stopPropagation();
+                setSelectedProduct(product);
               }}>
-                Adicionar ao Carrinho
+                Ver Detalhes
               </button>
             </div>
           ))}
         </div>
+
         {selectedProduct && (
           <ProductModal
             product={selectedProduct}
             onClose={() => setSelectedProduct(null)}
-            onAddToCart={(product) => {
-              handleAddToCart(product);
-              setSelectedProduct(null);
-            }}
+            onConfirmAddToCart={handleAddToCartFromModal}
           />
         )}
       </div>

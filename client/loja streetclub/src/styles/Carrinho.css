@@ -19,22 +19,26 @@
   }
   
   .carrinho-lista {
-    list-style: none;
-    border-radius: 15px;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
     margin: 2rem auto;
-    max-width: 700px;
+    padding: 0;
+    max-width: 50vw;
   }
   
   .carrinho-item {
+    width: 100%;
+    max-width: 60vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     background-color: #2a2a2a;
-    margin-bottom: 25px;
     padding: 1rem;
     border-radius: 8px;
     gap: 1rem;
+    transition: background-color 0.3s ease;
   }
   
   .carrinho-item:hover {
@@ -43,8 +47,8 @@
   }
 
   .carrinho-item img {
-    width: 80px;
-    height: 80px;
+    width: 20vh;
+    height: 20vh;
     object-fit: cover;
     border-radius: 6px;
     flex-shrink: 0;
@@ -52,16 +56,20 @@
   
   .carrinho-item div {
     flex: 1;
-    text-align: left;
+    text-align: right;
+    font-size: 18px;
   }
   
   .carrinho-item h2 {
-    margin: 0;
-    font-size: 20px;
+    margin: 0 0;
+    font-size: 22px;
+    text-align: left;
+    padding-top: 5px;
   }
   
   .carrinho-item p {
     margin: 0.3rem 0;
+    text-align: right;
   }
   
   .carrinho-item button {
@@ -96,7 +104,32 @@
     background-color: #d43c3c;
     transform: scale(1.1);
   }
-  
+  .coupon-section {
+    background-color: #2a2a2a;
+    padding: 20px 0px 15px 0px;
+  }
+  .coupon-section input {
+    margin-left: -30px;
+    margin-right: 15px;
+    padding: 0px 15px;
+    height: 50px;
+    border: 1px solid #fc8300;
+    color: #fc8300;
+    border-radius: 30px;
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 18px;
+  }
+  .cupom-btn {
+    padding: 15px;
+    border-radius: 30px;
+  }
+  .cupom-btn:hover {
+    border: 1px solid #fc8300;
+  }
+  .discount-message {
+    color: #fc8300;
+    font-size: 22px;
+  }
   /* Total e finalização */
   .total-container {
     margin-top: 2rem;
@@ -110,7 +143,7 @@
   
   .finalize-btn {
     padding: 0.6rem 1.2rem;
-    background-color: #35d6b6;
+    background-color: #358e7e;
     color: #000;
     border: none;
     border-radius: 6px;
@@ -120,6 +153,6 @@
   }
   
   .finalize-btn:hover {
-    background-color: #27b89c;
+    background-color: #358e7e;
     transform: scale(1.1);
   }  

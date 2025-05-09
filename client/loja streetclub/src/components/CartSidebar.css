@@ -1,0 +1,119 @@
+.cart-sidebar {
+  position: fixed;
+  top: 55px;
+  right: -100%; /* escondido inicialmente */
+  width: 300px;
+  height: 95vh;
+  background: #000000ee;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  transition: right 2s ease-in-out; /* tempo de transição reduzido para fluidez */
+  z-index: 1000;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-family: 'Geosanslight', sans-serif;
+}
+
+.cart-sidebar.open {
+  right: 0; /* mostra com transição suave */
+}
+
+.cart-sidebar.closed {
+  right: -80%; /* fecha com transição suave */
+}
+
+
+.cart-sidebar-header {
+  border-bottom: 1px solid #ddd;
+}
+.cart-sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 20px;
+}
+
+.cart-sidebar-footer .total-price {
+    font-size: 25px;
+    color: #358e7e;
+}
+
+.cart-sidebar-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  top: 10px;
+  left: 0;
+  position: absolute;
+}
+
+.cart-sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+
+.cart-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  color: #358e7e;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-item-info p {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.go-to-cart-button {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cart-icon-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: #791493;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: 1s all ease;
+}
+
+.cart-icon-button:hover {
+  background-color: #9c28ba;
+  transform: scale(1.1);
+}

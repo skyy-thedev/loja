@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     width: 94vw;
-    height: 50px;
+    height: 55px;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,19 +24,19 @@
   }
 
   #logo {
-    margin-top: 50px;
-    margin-left: 40vw;
+    margin-top: 25px;
+    margin-left: 41.5vw;
     padding: 5px 0px;
     width: 200px;
-    height: 150px;
-    filter: drop-shadow(0px 0px 5px #920475);
+    height: 200px;
+    filter: drop-shadow(0px 0px 5px #791493);
     transition: 0.5s all ease;
   }
 
   #logo:hover {
     cursor: pointer;
     transform: scale(1.1);
-    filter: drop-shadow(0px 0px 5px #35d6b698);
+    filter: drop-shadow(0px 0px 5px #358e7e);
   }
 
   .nav a {
@@ -52,5 +52,5 @@
   .nav a:hover {
     color: #35d6b6;
     transform: scale(1.2);
-    filter: drop-shadow(0px 0px 5px #920475);
+    filter: drop-shadow(0px 0px 5px #791493);
   }  

@@ -12,6 +12,12 @@ const products = [
       description: "Camiseta 100% algodão, confortável e moderna produzida pelo artista e graffiteiro GrowArt em parceria com a StreetClub.",
       image: camisetaImg,
       promo: true,
+      stock: {
+        P: true,
+        M: false,
+        G: true,
+        GG: true
+      },
     },
     {
       id: 2,
@@ -38,7 +44,7 @@ const products = [
     {
       id: 4,
       name: 'Cap EasyMoney',
-      color: 'vermelho',
+      color: 'branco',
       type: 'cap',
       price: 249.90,
       oldPrice: '',
@@ -56,6 +62,12 @@ const products = [
       description: "Camiseta 100% algodão, confortável e moderno da Hippest.",
       image: 'https://acdn-us.mitiendanube.com/stores/001/886/076/products/20220703_161757-copiar1-d70471e86a3192a09016571379383997-1024-1024.jpg',
       promo: false,
+      stock: {
+        P: false,
+        M: true,
+        G: false,
+        GG: true
+      },
     },
     {
       id: 6,
@@ -67,6 +79,12 @@ const products = [
       description: "Bermuda cargo, design street e moderno by StreetClub.",
       image: 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m8mfjv0ynto101',
       promo: false,
+      stock: {
+        P: true,
+        M: true,
+        G: true,
+        GG: true
+      },
     },
   ];
   

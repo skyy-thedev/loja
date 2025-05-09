@@ -1,0 +1,58 @@
+.confirmation-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirmation-modal-content {
+  background-color: #0e0e0ee6;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  font-family: 'Geosanslight', sans-serif;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.confirm-button,
+.go-to-cart-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.confirm-button {
+  background-color: #35d6b6;
+  color: black;
+}
+
+.confirm-button:hover {
+  background-color: #28b0a0;
+  color: white;
+}
+
+.go-to-cart-button {
+  background-color: #b211a4;
+  color: white;
+}
+
+.go-to-cart-button:hover {
+  background-color: #7f0c73;
+}

@@ -1,4 +1,3 @@
-// src/pages/ProductDetails.jsx
 import { useParams, useNavigate } from 'react-router-dom';
 import productsData from '../data/products';
 import useStore from '../context/useStore';
