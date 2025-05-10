@@ -39,7 +39,7 @@ export default function CartSidebar({ onGoToCart }) {
               <li key={index} className="cart-item">
                 <img src={item.image} alt={item.name} />
                 <div className="cart-item-info">
-                  <p>{item.name} <br/> {item.selectedSize}</p>
+                  <p>{item.name} <br/> Tamanho: {item.selectedSize}</p>
                   <span>Cor: {item.selectedColor}</span>
                   <span>R$ {item.price.toFixed(2)} x {item.quantity}</span>
                 </div>

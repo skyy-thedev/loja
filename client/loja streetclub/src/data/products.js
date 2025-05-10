@@ -29,6 +29,7 @@ const products = [
       description: "Boné aba reta, streetwear vermelho e preto.",
       image: 'https://http2.mlstatic.com/D_NQ_NP_642083-MLB78033545357_072024-O-bone-five-panel-molotov-fogo-streetwear-skatista-aba-reta.webp',
       promo: true,
+      stock: "Único",
     },
     {
       id: 3,
@@ -40,6 +41,7 @@ const products = [
       description: "Boné aba reta, streetwear preto e branco. Design Premium",
       image: 'https://http2.mlstatic.com/D_997647-MLB81823469866_012025-O.jpg',
       promo: true,
+      stock: "Único",
     },
     {
       id: 4,
@@ -51,6 +53,7 @@ const products = [
       description: "Boné aba reta, streetwear preto e branco. Design Premium",
       image: 'https://a-static.mlcdn.com.br/1500x1500/bone-streetwear-five-panel-dinheiro-aba-reta-ajuste-traseiro-anth-co/youngcommercez/ia116-bege/4ecc91eef1a048cfc027b625fa6353a7.jpeg',
       promo: false,
+      stock: "Único",
     },
     {
       id: 5,

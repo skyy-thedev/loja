@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useStore from '../context/useStore';
 import Notification from '../components/Notification';
 import ModalConfirm from '../components/ModalConfirm';
@@ -23,6 +24,8 @@ export default function Carrinho() {
       payload: { id: productId, selectedSize, name: productName }
     });
   };
+
+  const navigate = useNavigate();
 
   const handleClearCart = () => {
     setModal({
@@ -63,6 +66,10 @@ export default function Carrinho() {
     }
   };
 
+  const handleAddMore = () => {
+    navigate('/loja');
+  };
+
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const discount = discountApplied ? total * 0.15 : 0;
   const totalWithDiscount = total - discount;
@@ -81,6 +88,9 @@ export default function Carrinho() {
       <Destaque />
 
       <h1>Seu Carrinho</h1>
+        <button className="addmore-button" onClick={handleAddMore}>
+          Adicionar mais produtos
+        </button>
 
       {cart.length === 0 ? (
         <p>Seu carrinho está vazio.</p>
@@ -113,6 +123,14 @@ export default function Carrinho() {
             {discountApplied && (
               <p className="discount-message">Cupom STREETCLUB aplicado! (15% de desconto)</p>
             )}
+            <input
+              id='cep-input'
+              type="text"
+              placeholder="Digite o CEP"
+              value={couponCode}
+              onChange={(e) => setCouponCode(e.target.value)}
+            />
+            <button onClick={handleApplyCoupon} className='frete-btn'>Calcular Frete</button>
           </div>
 
           <div className="total-container">

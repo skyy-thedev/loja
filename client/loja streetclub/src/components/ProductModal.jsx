@@ -25,16 +25,23 @@ export default function ProductModal({ product, onClose, onConfirmAddToCart }) {
   const isWearable = product.type === 'camiseta' || product.type === 'bermuda';
   const sizes = ['P', 'M', 'G', 'GG'];
 
-    const handleAddToCart = () => {
-      if (isWearable && !selectedSize) return; // Verifica se o tamanho foi selecionado
-      const productWithOptions = { ...product, selectedSize, selectedColor }; // Passa o tamanho e cor
+  const handleAddToCart = () => {
+    if (isWearable && !selectedSize) return;
 
-      console.log('selectedSize no ProductModal:', selectedSize);
-      console.log('productWithOptions:', productWithOptions);
+    const sizeToUse = isWearable ? selectedSize : 'Único';
 
-      onConfirmAddToCart(productWithOptions); // Passa o item com as opções selecionadas
-      onClose();
+    const productWithOptions = {
+      ...product,
+      selectedSize: sizeToUse,
+      selectedColor
     };
+
+    console.log('selectedSize no ProductModal:', sizeToUse);
+    console.log('productWithOptions:', productWithOptions);
+
+    onConfirmAddToCart(productWithOptions);
+    onClose();
+  };
 
   return (
     <div className="modal-overlay" onClick={handleBackgroundClick}>

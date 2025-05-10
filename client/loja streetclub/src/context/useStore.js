@@ -3,17 +3,23 @@ import { create } from 'zustand';
 const useStore = create((set, get) => ({
   cart: [],
 
-  // Adiciona um item ao carrinho
   addToCart: (productWithOptions) => {
     const cart = get().cart;
-
     const { selectedSize, color, stock, id } = productWithOptions;
 
-    // Logs de depuração
     console.log('selectedSize no useStore.js:', selectedSize);
     console.log('product.stock:', stock);
 
-    const isProductAvailable = stock?.[selectedSize];
+    // Verifica se o stock é um objeto (com tamanhos) ou não
+    let isProductAvailable = true;
+
+    if (typeof stock === 'object' && stock !== null) {
+      // Para produtos com tamanhos (camiseta, bermuda)
+      isProductAvailable = stock[selectedSize] > 0;
+    } else if (typeof stock === 'string') {
+      // Para produtos com tamanho único (ex: 'Único')
+      isProductAvailable = stock === 'Único';
+    }
 
     if (!isProductAvailable) {
       console.log('Produto não disponível.');
@@ -30,7 +36,6 @@ const useStore = create((set, get) => ({
     );
 
     if (existing) {
-      // Se já existe, incrementa a quantidade
       set({
         cart: cart.map((item) =>
           item.id === id &&
@@ -41,14 +46,12 @@ const useStore = create((set, get) => ({
         ),
       });
     } else {
-      // Se não existe, adiciona com quantidade 1
       set({
         cart: [...cart, { ...productWithOptions, quantity: 1 }],
       });
     }
   },
 
-  // Remove item do carrinho
   removeFromCart: (productId, selectedSize) =>
     set({
       cart: get().cart.filter(
@@ -56,7 +59,6 @@ const useStore = create((set, get) => ({
       ),
     }),
 
-  // Atualiza quantidade manualmente
   updateQuantity: (productId, selectedSize, quantity) =>
     set({
       cart: get().cart.map((item) =>
@@ -66,7 +68,6 @@ const useStore = create((set, get) => ({
       ),
     }),
 
-  // Limpa o carrinho
   clearCart: () => set({ cart: [] }),
 }));
 
