@@ -3,14 +3,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 94vw;
+    width: 95vw;
     height: 55px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
     padding: 10px;
-    background-color: #0b0b0bf6;
+    background-color: #0b0b0bfd;
     color: #fff;
     font-family: 'Geosanslight', sans-serif;
     padding: 0px 50px;
@@ -24,8 +24,10 @@
   }
 
   #logo {
+    position: absolute;
     margin-top: 25px;
-    margin-left: 41.5vw;
+    top: -90px;
+    left: 44vw;
     padding: 5px 0px;
     width: 200px;
     height: 200px;

@@ -8,6 +8,7 @@ import AddToCartConfirmationModal from '../components/AddToCartConfirmationModal
 import Destaque from '../components/Destaque';
 import ProductFilter from '../components/ProductFilter';
 import ProductModal from '../components/ProductModal';
+import FaixaContinuaLinear from '../components/FaixaContinuaLinear';
 import '../styles/Loja.css';
 
 export default function Loja() {
@@ -74,7 +75,7 @@ export default function Loja() {
           navigate('/carrinho');
         }}
       />
-
+      <FaixaContinuaLinear />
       <Destaque />
       <h3>Produtos em destaque:</h3>
 

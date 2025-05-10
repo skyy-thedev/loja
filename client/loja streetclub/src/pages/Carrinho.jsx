@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useStore from '../context/useStore';
+import FaixaContinuaLinear from '../components/FaixaContinuaLinear';
 import Notification from '../components/Notification';
 import ModalConfirm from '../components/ModalConfirm';
 import Destaque from '../components/Destaque';
@@ -85,6 +86,7 @@ export default function Carrinho() {
         />
       )}
 
+      <FaixaContinuaLinear />
       <Destaque />
 
       <h1>Seu Carrinho</h1>

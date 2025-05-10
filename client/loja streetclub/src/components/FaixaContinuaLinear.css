@@ -1,0 +1,41 @@
+.faixa-principal {
+    margin-top: 50px;
+    max-height: 50px;
+    max-width: 99vw;
+    padding: 0;
+    gap: 56px;
+    position: fixed;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden; /* Evita que o conteúdo ultrapasse */
+    white-space: nowrap;
+    z-index: 99;
+}
+
+.scrolling-container {
+    display: flex;
+    animation: infiniteScroll 25s linear infinite;
+}
+
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.scrolling-text {
+    color: #fff;
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 16px;
+    padding-right: 56px; /* Espaçamento entre os textos */
+    transition: 1s color ease;
+    text-transform: uppercase;
+}
+.scrolling-text:hover {
+
+    color: #791493;
+}
